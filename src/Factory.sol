@@ -13,8 +13,8 @@ contract Factory {
 
     event ProxyCreated(address proxy);
 
-    constructor(address _implementation, address _initialOwner) {
-        beacon = address(new Beacon(_implementation, _initialOwner));
+    constructor(address _implementation) {
+        beacon = address(new Beacon(_implementation));
     }
 
     function createProxy(uint256 _value) external {
